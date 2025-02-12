@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:type="TaskPaneApp">
+    <Id>com.outlook.gpt.suggestions</Id>
+    <Version>1.0</Version>
+    <ProviderName>GPT Assistant</ProviderName>
+    <DisplayName DefaultValue="GPT Auto-Suggestions"/>
+    <Description DefaultValue="Ajoute des suggestions automatiques de phrases dans Outlook"/>
+    <Hosts>
+        <Host Name="Mailbox"/>
+    </Hosts>
+    <DefaultSettings>
+        <SourceLocation DefaultValue="https://matloplmg.github.io/gpt-outlook/gpt-suggestions.html"/>
+    </DefaultSettings>
+    <Permissions>ReadWriteItem</Permissions>
+</OfficeApp>
