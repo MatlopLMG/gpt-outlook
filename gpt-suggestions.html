@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>GPT Auto-Suggestions</title>
+    <script>
+        async function fetchGPTSuggestion() {
+            let response = await fetch("https://api.openai.com/v1/completions", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": "Bearer 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"
+                },
+                body: JSON.stringify({
+                    model: "gpt-4",
+                    prompt: "Complète cette phrase de manière professionnelle : Bonjour, je voulais savoir...",
+                    max_tokens: 50
+                })
+            });
+
+            let data = await response.json();
+            document.getElementById("suggestion").innerText = data.choices[0].text.trim();
+        }
+
+        window.onload = fetchGPTSuggestion;
+    </script>
+</head>
+<body>
+    <h1>GPT Auto-Suggestions</h1>
+    <p id="suggestion">Chargement de la suggestion...</p>
+</body>
+</html>
